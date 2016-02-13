@@ -44,3 +44,12 @@ h4{
     line-height: 0.2em;
     letter-spacing: 0.1em;
 }
+
+/* '> *' denotes all direct child elements */
+.commentBox > * {
+    display: inline;
+}
+
+.grumpButton{
+    margin: 0em 1em;
+}
