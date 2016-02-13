@@ -45,8 +45,14 @@ h4{
     letter-spacing: 0.1em;
 }
 
+.commentBox{
+    text-align: left;
+    outline: 1px solid #e0e0e0;
+    margin: 0.5em 0em;
+    padding: 0.5em;
+}
 /* '> *' denotes all direct child elements */
-.commentBox > * {
+.commentBox > *{
     display: inline;
 }
 
