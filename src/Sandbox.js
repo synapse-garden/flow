@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
 
-export default class Tut extends Component {
-  render() {
-    return (
-        <div>
-        <CommentBox />
-        <CommentBox />
-        <CommentBox />
-        <CommentBox />
-        </div>
-    );
-  }
+export default class Sandbox extends Component {
+    render() {
+        return (
+            <div>
+                <GrumpCounter />
+                <CommentBox />
+                <CommentBox />
+                <CommentBox />
+                <CommentBox />
+            </div>
+        );
+    }
 }
+
+var GrumpCounter = React.createClass({
+    getInitialState: function() {
+        return {totalGrumps: 0 };
+    },
+    render: function() {
+        return (
+            <div className="grumpCounter">
+                Total Grumps: {this.state.totalGrumps}
+            </div>
+        );
+    }
+});
 
 var CommentBox = React.createClass({
     render: function() {
@@ -33,8 +47,10 @@ var GrumpButton = React.createClass({
         click.preventDefault();
         this.setState({
             numGrumps: this.state.numGrumps + 1,
+            //Evals to true at 2 instead of 1... ? unsure why
             grumpText: (this.state.numGrumps == 1) ? ' Grump' : ' Grumps'
         });
+        GrumpCounter.setState({totalGrumps: GrumpCounter.totalGrumps + 1});
     },
     render: function() {
         return (
