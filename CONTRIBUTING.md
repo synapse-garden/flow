@@ -1,6 +1,6 @@
 ## Things you'll need
 
- - A text editor such as Atom (we like Facebook's Nuclide package)
+ - A text editor such as Atom (we like [Facebook's Nuclide](http://nuclide.io/) package)
  - [Node.js](https://nodejs.org/)
  - [React Developer Tools for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?utm_source=chrome-ntp-icon)
 
