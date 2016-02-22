@@ -13,10 +13,11 @@ class Home extends React.Component {
     return (<div>
         <h1>State Time</h1>
         <h2>{appTime}</h2><br />
-        <button
-            onClick={() => this.clickRefreshButton()}>
+        <a
+            onClick={() => this.clickRefreshButton()}
+            className="button no-text-select">
             Update State Time
-        </button><br />
+        </a><br />
         <p>Total Clicks: {totalClicks}</p>
     </div>)
     }
