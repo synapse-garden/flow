@@ -3,21 +3,32 @@ import { connect } from 'react-redux'
 
 import * as actionCreators from './action-creators'
 
-class Home extends React.component {
-    var { AppTime, TotalClicks } = this.props
+class Home extends React.Component {
     clickRefreshButton(){
         this.props.dispatch(actionCreators.updateClicks())
         this.props.dispatch(actionCreators.refreshTime())
     }
     render () {
-        return (
-            <h1>State Time</h1><br>
-            <h2>${AppTime}</h2><br>
-            <button
-                onClick={() => this.clickRefreshButton()}>
-                Refresh State Time
-            </button><br>
-            <h3>Total Clicks: ${TotalClicks}</h3>
-        )
+    var { appTime, totalClicks } = this.props
+    return (<div>
+        <h1>State Time</h1>
+        <h2>{appTime}</h2><br />
+        <button
+            onClick={() => this.clickRefreshButton()}>
+            Update State Time
+        </button><br />
+        <p>Total Clicks: {totalClicks}</p>
+    </div>)
     }
 }
+
+const mapStateToProps = (state/*, props*/) => {
+  return {
+    appTime: state.mainReducer.appTime,
+    totalClicks: state.mainReducer.totalClicks,
+  }
+}
+
+const ConnectedHome = connect(mapStateToProps)(Home)
+
+export default ConnectedHome

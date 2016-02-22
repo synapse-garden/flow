@@ -1,22 +1,25 @@
-var initialState = {}
+var initialState = {
+    appTime: "Uninitialized",
+    totalClicks: 0
+}
 
-export function setTime ( ) {
+export function mainReducer (state = initialState, action) {
     console.log('setTime reducer called.');
 
     switch (action.type) {
         case 'SET_APPTIME':
             return{
                 ...state,
-                AppTime: action.time
+                appTime: action.time
             }
         case 'ADD_CLICK':
             return{
                 ...state,
-                TotalClicks: state.TotalClicks + 1
+                totalClicks: state.totalClicks + 1
             }
         default:
         return state
     }
 
-    console.log('AppTime now set to ', state.AppTime );
+    console.log('AppTime now set to ', state.appTime );
 }
