@@ -1,5 +1,5 @@
 export default{
-    lists:[
+    lists: [
         {
         id: 0,
         title:'Soon',
