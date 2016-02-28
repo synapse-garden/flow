@@ -3,9 +3,10 @@ import initialState from '../init/initTasks'
 
 // Create entry reducer function body with initial state and action input
 const lists = (state = initialState, action) => {
+    console.log('Lists Reducer > State: ', state)
     // Switch logic chooses what to execute based on the action type
     switch (action.type){
-        case 'A':
+        case 'INIT_LISTS':
             return{
                 state
             }

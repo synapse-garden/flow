@@ -8,6 +8,7 @@
     outline: 1px solid #e0e0e0;
     outline-offset: -1px;
     display: inline-block;
+    text-decoration: none;
     padding: 0.5em 2em;
     transition: all 0.1s ease-out;
 }

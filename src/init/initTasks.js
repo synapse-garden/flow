@@ -1,5 +1,4 @@
-const data =
-{
+export default {
     lists: [
     {
     id: 0,
@@ -118,5 +117,3 @@ const data =
 
 totalTaskCount: 0
 }
-
-export default data
