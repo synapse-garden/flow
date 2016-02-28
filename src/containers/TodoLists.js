@@ -14,20 +14,29 @@ const TodoLists = ({
 
             <h2>{user}'s {title}</h2>
             <h4>Total Tasks: {count}</h4>
-            {/*<ul>{lists.map( list =>
-                <li key={list.id}>{list.title}</li>
-            )}</ul>*/}
+            <ul>{lists.map( list =>
+                <li key={list.id}
+                    className="header">
+                    {list.title}
+
+                    <ol>{list.tasks.map( task =>
+                        <li key={task.id}>
+                            {task.title}
+                        </li>
+                    )}</ol><br />
+                </li>
+            )}</ul>
 
         </div> )
 //
 
 const mapStateToProps = (state, props) => {
     return {
-        lists: state.lists,
+        lists: state.lists.lists,
         //lists: [{title: "grump", id: 0}, {title: "grumpadump", id: 1}],
         title: props.title,
-        count: state.totalTaskCount,
-        user: state.user
+        count: state.lists.totalTaskCount,
+        user: state.app.user
     }
 }
 

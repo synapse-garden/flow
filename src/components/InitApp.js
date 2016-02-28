@@ -1,14 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { initLists } from '../actions/main'
+import { countTasks } from '../actions/main'
 
 const InitApp = ({
-    onClickFn
+    onClickFn,
+    wholeState
 }) => (<div>
 
     <a href="#"
-       onClick={() => onClickFn()}
+       onClick={() => onClickFn(wholeState.lists)}
        className="button">
 
             Initialize
@@ -18,17 +19,18 @@ const InitApp = ({
 
 const mapStateToProps = (state/*, props*/) => {
   return {
+    wholeState: state
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClickFn: () => {
-      dispatch(initLists())
+    onClickFn: (input) => {
+      dispatch(countTasks(input))
     }
   }
 }
 
-const ConnectedInitApp = connect(null, mapDispatchToProps)(InitApp)
+const ConnectedInitApp = connect(mapStateToProps, mapDispatchToProps)(InitApp)
 
 export default ConnectedInitApp

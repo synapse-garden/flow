@@ -1,5 +1,8 @@
-export const initLists = () => {
+export const countTasks = ( lists ) => {
+    let sum = lists.reduce( (prev, curr) => prev + cur)
+
     return{
-        type: 'INIT_LISTS'
+        type: 'COUNT_TASKS',
+        num: sum
     }
 }

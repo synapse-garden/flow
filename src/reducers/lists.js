@@ -6,9 +6,10 @@ const lists = (state = initialState, action) => {
     console.log('Lists Reducer > State: ', state)
     // Switch logic chooses what to execute based on the action type
     switch (action.type){
-        case 'INIT_LISTS':
+        case 'COUNT_TASKS':
             return{
-                state
+                ...state,
+                totalTaskCount: action.num
             }
         // In case nothing happens, just return the input (no action)
         default: return state
