@@ -11,7 +11,6 @@ html{
     font-weight: 300;
     letter-spacing: 0.05em;
     color: #808080;
-    line-height: 1.6em;
     font-size: 1em;
 }
 
@@ -20,7 +19,10 @@ body{
     padding: 0;
 }
 
-p{ color: #808080; }
+p{
+    color: #808080;
+    line-height: 1.6em;
+}
 
 hr{ border-top: 1px dotted #d0d0d0; border-bottom: none; }
 
@@ -33,6 +35,7 @@ hr{ border-top: 1px dotted #d0d0d0; border-bottom: none; }
 #mainTitle{
     font-size: 3em;
     letter-spacing: 0.06em;
+    line-height: 0.5em;
     color: #f0b040;
 }
 
@@ -58,18 +61,21 @@ table{
     width: 100%;
     font-size: 0.8em;
 }
-thead{
+thead.todoList tr{
     text-align: center;
-    background: #f2f2f2;
+    background-color: #f0f0f0;
     font-weight: 700;
 }
 tbody{
 }
+
+tr:nth-child(odd){
+    background-color: #fafafa;
+}
 tr:nth-child(even){
-    background: #f8f8f8;
+    background-color: #f4f4f4;
 }
 td{
-    width: 30%;
     padding: 0.5em;
 }
 tbody tr:hover{
@@ -77,12 +83,21 @@ tbody tr:hover{
 }
 
 .todoSerial{
-    width: 3%;
+    width: 1em;
     text-align: center;
-    color: #d0d0d0;
+    opacity: 0.4;
+}
+.todoSerial.true{
+}
+.todoTitle{
+    width: 40%;
+}
+.todoStatus{
+    text-align: center;
+    width: 4em;
 }
 
-.todoStatus .true {
-    background: #f0fff0;
-
+tr.true {
+    background-color: #e0ffe0;
+    color: #60b060;
 }

@@ -3,7 +3,10 @@ import { connect } from 'react-redux'
 import ObjectList from './ObjectList'
 
 // Main Body
-const todoStatus = "todoStatus "
+const statusText = (status) => {
+    if( status == true ) return "✔"
+    else return ""
+}
 
 const TodoLists = ({
     // Input Variables
@@ -24,21 +27,20 @@ const TodoLists = ({
                     <h3>{list.title}</h3>
 
                     <table>
-                    <thead>
+                    <thead className="todoList">
                         <tr>
                         <td className="todoSerial">#</td>
-                        <td>Task</td>
-                        <td>Status</td>
-                        <td>Due Date</td>
+                        <td className="todoStatus">Status</td>
+                        <td className="todoTitle">Task</td>
+                        <td className="todoDate">Due Date</td>
                         </tr>
                     </thead>
                     <tbody>
                     {list.tasks.map( task =>
-                        <tr key={task.id}>
+                        <tr key={task.id} className={task.complete.toString()}>
                             <td className="todoSerial">{task.id}</td>
+                            <td className="todoStatus">{statusText(task.complete)}</td>
                             <td className="todoTitle">{task.title}</td>
-                            <td className={todoStatus.concat(task.complete.toString())}>
-                                {task.complete.toString()}</td>
                             <td className="todoDate">{task.dueDate} @ {task.dueTime}</td>
                         </tr>
                     )}
