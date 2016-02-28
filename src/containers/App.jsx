@@ -1,11 +1,12 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
-import ListsViewer from './ListsViewer'
+import TodoLists from './TodoLists'
 
 const App = () => (<div>
 
-    <ListsViewer />
+    <TodoLists
+        title = "Todo Lists"
+    />
 
 </div>)
 

@@ -46,7 +46,7 @@ h3::before{ content: "—  "; }
 h3::after{ content: "  —"; }
 
 h4{
-    color: #d0d0d0;
+    color: #c0c0c0;
     font-size: 0.8em;
     line-height: 0.2em;
     letter-spacing: 0.1em;

@@ -7,10 +7,10 @@ const lists = (state = initialState, action) => {
     switch (action.type){
         case 'A':
             return{
-
-            };
+                state
+            }
         // In case nothing happens, just return the input (no action)
-        default: return state;
+        default: return state
     }
 }
 

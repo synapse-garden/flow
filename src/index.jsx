@@ -1,6 +1,9 @@
+// Entry point for program
+
 // Miscellaneous Imports
 import React from 'react'
 //
+
 
 
 // Initialize store by applying middleware and using the final reducer
@@ -11,6 +14,7 @@ const bareStore = createStore( finalReducer )
 const store = applyMiddleware(  )
               ( bareStore )
 //
+
 
 
 // Place the entire app on webpage at the 'root' div
