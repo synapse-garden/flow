@@ -1,0 +1,25 @@
+.button{
+    text-align: center;
+    width: auto;
+    height: 1.5em;
+    margin: 0.5em;
+    color: #808080;
+    background-color: #f8f8f8;
+    outline: 1px solid #e0e0e0;
+    outline-offset: -1px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5em 2em;
+    transition: all 0.1s ease-out;
+}
+.button:hover{
+    color: #000000;
+    background-color: #f0f0f0;
+    outline-offset: 2px;
+    outline-color: #c0dada;
+}
+.button:active{
+    outline-offset: 5px;
+    outline-color: #40c0c0;
+    background-color: #e8e8e8;
+}

@@ -1,0 +1,46 @@
+table{
+    width: 100%;
+    font-size: 0.8em;
+    transition: all 0.1s ease-in;
+}
+thead.todoList tr{
+    text-align: center;
+    background-color: #f0f0f0;
+    font-weight: 700;
+}
+tbody{
+}
+
+tr:nth-child(odd){
+    background-color: #fafafa;
+}
+tr:nth-child(even){
+    background-color: #f4f4f4;
+}
+td{
+    padding: 0.5em;
+}
+tbody tr:hover{
+    /*outline: 1px solid #d0f0f0;*/
+    outline: 1px solid #e0e0e0;
+}
+
+.todoSerial{
+    width: 1em;
+    text-align: center;
+    opacity: 0.4;
+}
+.todoSerial.true{
+}
+.todoTitle{
+    width: 40%;
+}
+.todoStatus{
+    text-align: center;
+    width: 4em;
+}
+
+tr.true {
+    background-color: #e0ffe0;
+    color: #60b060;
+}
