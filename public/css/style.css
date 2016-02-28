@@ -9,9 +9,10 @@ html{
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    letter-spacing: 0em;
+    letter-spacing: 0.05em;
     color: #808080;
     line-height: 1.6em;
+    font-size: 1em;
 }
 
 body{
@@ -50,4 +51,38 @@ h4{
     font-size: 0.8em;
     line-height: 0.2em;
     letter-spacing: 0.1em;
+}
+
+
+table{
+    width: 100%;
+    font-size: 0.8em;
+}
+thead{
+    text-align: center;
+    background: #f2f2f2;
+    font-weight: 700;
+}
+tbody{
+}
+tr:nth-child(even){
+    background: #f8f8f8;
+}
+td{
+    width: 30%;
+    padding: 0.5em;
+}
+tbody tr:hover{
+    outline: 1px solid #d0f0f0;
+}
+
+.todoSerial{
+    width: 3%;
+    text-align: center;
+    color: #d0d0d0;
+}
+
+.todoStatus .true {
+    background: #f0fff0;
+
 }

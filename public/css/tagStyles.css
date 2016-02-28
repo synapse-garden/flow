@@ -10,7 +10,7 @@
 
 .popout{
     margin: 1em;
-    padding: 1em;
+    padding: 0.5em;
     outline: 1px solid #e0e0e0;
     box-shadow: 0px 0.25em 0.5em #f0f0f0;
 }

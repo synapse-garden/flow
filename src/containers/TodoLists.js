@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import ObjectList from './ObjectList'
 
 // Main Body
+const todoStatus = "todoStatus "
+
 const TodoLists = ({
     // Input Variables
     lists,
@@ -13,19 +15,39 @@ const TodoLists = ({
 }) => (<div className = "popout">
 
             <h2>{user}'s {title}</h2>
-            <h4>Total Tasks: {count}</h4>
-            <ul>{lists.map( list =>
-                <li key={list.id}
-                    className="header">
-                    {list.title}
 
-                    <ol>{list.tasks.map( task =>
-                        <li key={task.id}>
-                            {task.title}
-                        </li>
-                    )}</ol><br />
-                </li>
-            )}</ul>
+            <h4>Total Tasks: {count}</h4>
+
+            <div>{lists.map( list =>
+                <div key={list.id}
+                    className="popout">
+                    <h3>{list.title}</h3>
+
+                    <table>
+                    <thead>
+                        <tr>
+                        <td className="todoSerial">#</td>
+                        <td>Task</td>
+                        <td>Status</td>
+                        <td>Due Date</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {list.tasks.map( task =>
+                        <tr key={task.id}>
+                            <td className="todoSerial">{task.id}</td>
+                            <td className="todoTitle">{task.title}</td>
+                            <td className={todoStatus.concat(task.complete.toString())}>
+                                {task.complete.toString()}</td>
+                            <td className="todoDate">{task.dueDate} @ {task.dueTime}</td>
+                        </tr>
+                    )}
+                    </tbody>
+                    <tfoot></tfoot>
+                    </table>
+
+                </div>
+            )}</div>
 
         </div> )
 //
