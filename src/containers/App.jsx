@@ -9,7 +9,6 @@ const App = () => (<div>
     <TodoLists
         title = "Todo Lists"
     />
-    {/*<InitApp />*/}
 
 </div>)
 

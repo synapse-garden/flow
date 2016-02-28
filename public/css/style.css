@@ -28,8 +28,8 @@ hr{ border-top: 1px dotted #d0d0d0; border-bottom: none; }
 
 #titleBlock{
     padding-top: 2em;
-    padding-bottom: 1em;
-    margin-bottom: 3em;
+    padding-bottom: 0.25em;
+    margin-bottom: 2em;
     border-bottom: 1px solid #e0e0e0;
 }
 #mainTitle{
@@ -51,9 +51,9 @@ h3::after{ content: "  —"; }
 
 h4{
     color: #c0c0c0;
-    font-size: 0.8em;
-    line-height: 0.2em;
-    letter-spacing: 0.1em;
+    font-size: 0.7em;
+    line-height: 1em;
+    letter-spacing: 0.08em;
 }
 
 

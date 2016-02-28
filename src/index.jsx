@@ -6,7 +6,7 @@ import React from 'react'
 
 
 
-// Initialize store by applying middleware and using the final reducer
+// Initialize store by applying middleware and using the combined reducers
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import finalReducer from './reducers/reducerMux'
 
