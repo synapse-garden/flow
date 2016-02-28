@@ -1,5 +1,6 @@
 @import 'inputStyles.css';
 @import 'tagStyles.css';
+@import 'todoListStyle.css';
 
 
 html{
@@ -9,7 +10,7 @@ html{
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     color: #808080;
     font-size: 1em;
 }
@@ -39,6 +40,19 @@ hr{ border-top: 1px dotted #d0d0d0; border-bottom: none; }
     color: #f0b040;
 }
 
+#footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.8em;
+
+    color: #808080;
+    letter-spacing: 0.08em;
+
+    background-color: #f0f0f0;
+    padding: 1em 0;
+}
+
 h1, h2, h3, h4, h5, h6{
     color: #40c0c0;
     font-weight: 300;
@@ -54,50 +68,4 @@ h4{
     font-size: 0.7em;
     line-height: 1em;
     letter-spacing: 0.08em;
-}
-
-
-table{
-    width: 100%;
-    font-size: 0.8em;
-}
-thead.todoList tr{
-    text-align: center;
-    background-color: #f0f0f0;
-    font-weight: 700;
-}
-tbody{
-}
-
-tr:nth-child(odd){
-    background-color: #fafafa;
-}
-tr:nth-child(even){
-    background-color: #f4f4f4;
-}
-td{
-    padding: 0.5em;
-}
-tbody tr:hover{
-    outline: 1px solid #d0f0f0;
-}
-
-.todoSerial{
-    width: 1em;
-    text-align: center;
-    opacity: 0.4;
-}
-.todoSerial.true{
-}
-.todoTitle{
-    width: 40%;
-}
-.todoStatus{
-    text-align: center;
-    width: 4em;
-}
-
-tr.true {
-    background-color: #e0ffe0;
-    color: #60b060;
 }
