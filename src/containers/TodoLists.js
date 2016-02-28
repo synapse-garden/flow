@@ -8,6 +8,14 @@ const statusText = (status) => {
     else return ""
 }
 
+const sumTasks = (lists) => {
+    let sum = 0
+    lists.map( list => {
+        sum = sum + list.tasks.length
+    })
+    return sum
+}
+
 const TodoLists = ({
     // Input Variables
     lists,
@@ -59,7 +67,7 @@ const mapStateToProps = (state, props) => {
         lists: state.lists.lists,
         //lists: [{title: "grump", id: 0}, {title: "grumpadump", id: 1}],
         title: props.title,
-        count: state.lists.totalTaskCount,
+        count: sumTasks(state.lists.lists),
         user: state.app.user
     }
 }
