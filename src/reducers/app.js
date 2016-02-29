@@ -3,7 +3,7 @@ import initialState from '../init/initApp'
 
 // Create entry reducer function body with initial state and action input
 const app = (state = initialState, action) => {
-    console.log('App Reducer > State: ', state)
+    console.log('App Reducer > ', action.type)
     // Switch logic chooses what to execute based on the action type
     switch (action.type){
         case 'A':

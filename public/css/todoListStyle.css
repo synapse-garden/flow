@@ -21,8 +21,7 @@ td{
     padding: 0.5em;
 }
 tbody tr:hover{
-    /*outline: 1px solid #d0f0f0;*/
-    outline: 1px solid #e0e0e0;
+    /*outline: 1px solid #e0e0e0;*/
 }
 
 .todoSerial{
