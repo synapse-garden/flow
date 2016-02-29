@@ -18,11 +18,22 @@ const sumTasks = (lists) => {
     return sum
 }
 
+const sumComplete = (lists) => {
+    let sum = 0
+    lists.map( list => {
+        list.tasks.map( task => {
+            if( task.complete ){ sum = sum + 1 }
+        })
+    })
+    return sum
+}
+
 const TodoLists = ({
     // Variables from 'mapStateToProps'
     lists,
     title,
     count,
+    completeCount,
     user,
     dispatch
 
@@ -31,6 +42,7 @@ const TodoLists = ({
     <h2>{user}'s {title}</h2>
 
     <h4>Total Tasks: {count}</h4>
+    <h4>Tasks Complete: {completeCount} </h4>
 
     <div>{lists.map( list =>
         <div key={list.id}
@@ -73,6 +85,7 @@ const mapStateToProps = (state, props) => {
         lists: state.lists.lists,
         title: props.title,
         count: sumTasks(state.lists.lists),
+        completeCount: sumComplete(state.lists.lists),
         user: state.app.user
     }
 }
