@@ -17,11 +17,6 @@ npm install
 npm start
 ```
 
-This will start a live-reloading dev server in the project root.  It will also
-run a mock backend server on http://localhost:8080 (by default; change the
-value of devPort in `webpack.config.js` to change it!)
+This will start a live-reloading dev server in the project root.
 
 Navigate to http://localhost:3000 and you'll see your content.
-
-API requests on `http://localhost:3000/api` will be proxied to
-`http://localhost:8080/`.
