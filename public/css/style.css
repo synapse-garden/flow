@@ -1,6 +1,8 @@
-*{
-    transition: all 0.1s ease-out;
-}
+
+@import 'inputStyles.css';
+@import 'tagStyles.css';
+@import 'todoListStyle.css';
+
 
 html{
     margin: 0;
@@ -9,30 +11,47 @@ html{
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    letter-spacing: 0em;
+    letter-spacing: 0.04em;
     color: #808080;
-    line-height: 1.6em;
+    font-size: 1em;
 }
 
 body{
     margin: 0;
-    padding: 2em;
-}
-body > div{
-    margin: 1em 1em;
-    padding: 1em 1em;
-    outline: 1px solid #e0e0e0;
-    box-shadow: 0px 0.5em 1em #f0f0f0;
+    padding: 0;
 }
 
-p{ color: #808080; }
+p{
+    color: #808080;
+    line-height: 1.6em;
+}
 
 hr{ border-top: 1px dotted #d0d0d0; border-bottom: none; }
 
+#titleBlock{
+    padding-top: 2em;
+    padding-bottom: 0.25em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #e0e0e0;
+}
 #mainTitle{
     font-size: 3em;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
+    line-height: 0.5em;
     color: #f0b040;
+}
+
+#footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.8em;
+
+    color: #808080;
+    letter-spacing: 0.08em;
+
+    background-color: #f0f0f0;
+    padding: 1em 0;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -46,42 +65,8 @@ h3::before{ content: "—  "; }
 h3::after{ content: "  —"; }
 
 h4{
-    color: #d0d0d0;
-    font-size: 0.8em;
-    line-height: 0.2em;
-    letter-spacing: 0.1em;
-}
-
-.button{
-    text-align: center;
-    width: auto;
-    height: 1.5em;
-    margin: 0.5em;
-    color: #808080;
-    background-color: #f8f8f8;
-    outline: 1px solid #e0e0e0;
-    outline-offset: -1px;
-    display: inline-block;
-    padding: 0.5em 2em;
-}
-.button:hover{
-    color: #000000;
-    background-color: #f0f0f0;
-    outline-offset: 2px;
-    outline-color: #c0dada;
-}
-.button:active{
-    outline-offset: 5px;
-    outline-color: #40c0c0;
-    background-color: #e8e8e8;
-}
-
-.no-text-select{
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* IE/Edge */
-  user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
+    color: #c0c0c0;
+    font-size: 0.7em;
+    line-height: 1em;
+    letter-spacing: 0.08em;
 }

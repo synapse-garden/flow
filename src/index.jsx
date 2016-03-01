@@ -1,12 +1,31 @@
+// Entry point for program
+
+// Miscellaneous Imports
 import React from 'react'
+//
+
+
+
+// Initialize store by applying middleware and using the combined reducers
+import { createStore, applyMiddleware, combineReducers } from 'redux'
+import finalReducer from './reducers/reducerMux'
+
+const bareStore = createStore( finalReducer )
+const store = applyMiddleware(  )
+              ( bareStore )
+//
+
+
+
+// Place the entire app on webpage at the 'root' div
 import { render } from 'react-dom'
-import createStore from './create-store'
-
-import App from './app'
-
-const store = createStore( )
+import { Provider } from 'react-redux'
+import App from './containers/App'
 
 render(
-    <App store={store} />,
+    <Provider store={bareStore}>
+        <App />
+    </Provider>,
     document.getElementById('root')
 )
+//
