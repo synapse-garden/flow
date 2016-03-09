@@ -1,16 +1,30 @@
-//var http = require('http');
-//import express from 'express'
+////  IMPORTS  ////
+// Import Express
 var express = require('express');
 
-var expressServer = express()
+// Import Fake Data
+const initTasks = require('./init/initTasks.js');
+const initUsers = require('./init/initUsers.js');
 
 
-// Express Handler
-expressServer.get('/*', (req, res) => {
-    res.send('Express server received request: ' + req.url);
+
+////  SERVER FUNCTIONS  ////
+// Create the server object
+var expressServer = express();
+
+// Express Request Handlers
+    // Lists
+expressServer.get('/lists/:listId', (req, res) => {
+    if( req.params.listId == -1 ){ res.send( initTasks ); }
+    else{ res.send( initTasks[ req.params.listId ] ); }
+})
+    // Users
+expressServer.get('/users/:userId', (req, res) => {
+    if( req.params.userId == -1 ){ res.send( initUsers ); }
+    else{ res.send( initUsers[ req.params.userId ] ); }
 })
 
-// Express listen
+// Express Listen Function
 function expressBackend(port) {
     expressServer.listen(port, function() {
         console.log('Express server listening on port:', port);
@@ -18,22 +32,9 @@ function expressBackend(port) {
 }
 
 
-// // We need a function which handles requests and send response
-// function httpHandleRequest(request, response){
-//   response.end('Path Hit: ' + request.url);
-// }
-//
-// // HTTP Backend
-// function httpBackend(port) {
-//   var server = http.createServer(httpHandleRequest);
-//
-//   // start our server
-//   server.listen(port, function(){
-//     console.log("Mock service listening on http://localhost:%s", port);
-//   });
-// }
-//
+
+////  EXPORTS  ////
+// Export Modules
 module.exports = {
-  //backend: backend
   backend: expressBackend
 }
