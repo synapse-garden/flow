@@ -35,10 +35,9 @@ const list = (state, action) => {
 const lists = (state = initialState, action) => {
     // Switch logic chooses what to execute based on the action type
     switch (action.type){
-        case 'TOGGLE_TODO': return[
-            ...state,
+        case 'TOGGLE_TODO': return(
             state.map(l => list(l, action))
-        ]
+        )
 
         // Sets the new lists state to the entirety of the incoming data
         case 'GET_LISTS': return(
