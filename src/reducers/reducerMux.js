@@ -3,12 +3,12 @@ import { combineReducers } from 'redux'
 
 // Import compartmentalized reducer files
 import lists from './lists'
-import app from './app'
+import users from './users'
 
 // Combine imported reducers
 const reducerMux = combineReducers({
     lists,
-    app
+    users
 })
 
 // Set default export value to the combined reducers

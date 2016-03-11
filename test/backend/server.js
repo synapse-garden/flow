@@ -15,11 +15,15 @@ var expressServer = express();
 // Express Request Handlers
     // Lists
 expressServer.get('/lists/:listId', (req, res) => {
-    if( req.params.listId == -1 ){ res.send( initTasks ); }
+    console.log( "List Request!" );
+    if( req.params.listId == -1 ){
+        res.send( initTasks );
+    }
     else{ res.send( initTasks[ req.params.listId ] ); }
 })
     // Users
 expressServer.get('/users/:userId', (req, res) => {
+    console.log( "User Request!" );
     if( req.params.userId == -1 ){ res.send( initUsers ); }
     else{ res.send( initUsers[ req.params.userId ] ); }
 })

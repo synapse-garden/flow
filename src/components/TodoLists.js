@@ -37,7 +37,7 @@ const TodoLists = ({
     user,
     dispatch
 
-}) => (<div className = "popout">
+}) => (<div className="popout">
 
     <h2>{user}'s {title}</h2>
 
@@ -82,14 +82,12 @@ const TodoLists = ({
 //
 const mapStateToProps = (state, props) => {
     return {
-        lists: state.lists.lists,
+        lists: state.lists,
         title: props.title,
-        count: sumTasks(state.lists.lists),
-        completeCount: sumComplete(state.lists.lists),
-        user: state.app.user
+        count: sumTasks(state.lists),
+        completeCount: sumComplete(state.lists),
+        user: state.users[0]
     }
 }
 
-const ConnectedTodoLists = connect(mapStateToProps)(TodoLists)
-
-export default ConnectedTodoLists
+export default connect(mapStateToProps)(TodoLists)

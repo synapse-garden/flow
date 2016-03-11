@@ -1,36 +1,29 @@
 import React from 'react'
+import $ from 'jquery'
 import { connect } from 'react-redux'
 
-import { countTasks } from '../actions/main'
+import { initLists } from '../actions/init'
+import { initUsers } from '../actions/init'
 
-const InitApp = ({
-    onClickFn,
-    wholeState
-}) => (<div>
+const InitApp = ({ pushLists, pushUsers }) => (<div>
 
-    <a href="#"
-       onClick={() => onClickFn(wholeState.lists)}
-       className="button">
-
-            Initialize
+    <a className="button"
+       href="#"
+       onClick={ _ => {
+           $.get('api/lists/-1', (data) => { pushLists(data) } )
+           $.get('api/users/-1', (data) => { pushUsers(data) } )
+       } }
+    >
+        Initialize App State
     </a>
 
 </div>)
 
-const mapStateToProps = (state/*, props*/) => {
-  return {
-    wholeState: state
-  }
-}
-
 const mapDispatchToProps = (dispatch) => {
-  return {
-    onClickFn: (input) => {
-      dispatch(countTasks(input))
+    return{
+        pushLists: (data) => { dispatch( initLists(data) ) },
+        pushUsers: (data) => { dispatch( initUsers(data) ) }
     }
-  }
 }
 
-const ConnectedInitApp = connect(mapStateToProps, mapDispatchToProps)(InitApp)
-
-export default ConnectedInitApp
+export default connect(null,mapDispatchToProps)(InitApp)
