@@ -1,0 +1,72 @@
+
+@import 'inputStyles.css';
+@import 'tagStyles.css';
+@import 'todoListStyle.css';
+
+
+html{
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: #808080;
+    font-size: 1em;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    color: #808080;
+    line-height: 1.6em;
+}
+
+hr{ border-top: 1px dotted #d0d0d0; border-bottom: none; }
+
+#titleBlock{
+    padding-top: 2em;
+    padding-bottom: 0.25em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #e0e0e0;
+}
+#mainTitle{
+    font-size: 3em;
+    letter-spacing: 0.06em;
+    line-height: 0.5em;
+    color: #f0b040;
+}
+
+#footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.8em;
+
+    color: #808080;
+    letter-spacing: 0.08em;
+
+    background-color: #f0f0f0;
+    padding: 1em 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #40c0c0;
+    font-weight: 300;
+}
+
+h1{ font-size: 3em; }
+h3{ color: #f0b040; }
+h3::before{ content: "—  "; }
+h3::after{ content: "  —"; }
+
+h4{
+    color: #c0c0c0;
+    font-size: 0.7em;
+    line-height: 1em;
+    letter-spacing: 0.08em;
+}
