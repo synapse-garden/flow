@@ -1,16 +1,31 @@
 import React from 'react'
+import $ from 'jquery'
+import { connect } from 'react-redux'
 
 import TodoLists from '../components/TodoLists'
-import InitApp from '../components/InitApp'
 
-const App = () => (<div>
+import { initLists } from '../actions/init'
+import { initUsers } from '../actions/init'
 
-    <TodoLists
-        title = "Todo Lists"
-    />
+var App = React.createClass({
+    componentWillMount() {
+        $.get('api/users/-1', (data) => { this.props.pushUsers(data) } )
+        $.get('api/lists/-1', (data) => { this.props.pushLists(data) } )
+    },
+    render(){return(<div>
 
-    <InitApp />
+        <TodoLists
+            title = "Todo Lists"
+        />
 
-</div>)
+    </div>)}
+})
 
-export default App
+const mapDispatchToProps = (dispatch) => {
+    return{
+        pushLists: (data) => { dispatch( initLists(data) ) },
+        pushUsers: (data) => { dispatch( initUsers(data) ) }
+    }
+}
+
+export default connect(null,mapDispatchToProps)(App)
