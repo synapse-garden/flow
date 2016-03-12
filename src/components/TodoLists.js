@@ -10,31 +10,26 @@ const statusText = (status) => {
     else return ""
 }
 
-const sumTasks = (lists) => {
-    let sum = 0
-    lists.map( list => {
-        sum = sum + list.tasks.length
-    })
-    return sum
+const sumTasks = (objects) => {
+    return objects.length
 }
 
-const sumComplete = (lists) => {
+const sumComplete = (objects) => {
     let sum = 0
-    lists.map( list => {
-        list.tasks.map( task => {
-            if( task.complete ){ sum = sum + 1 }
-        })
+    objects.map( o => {
+        if( o.complete ){ sum = sum + 1 }
     })
     return sum
 }
 
 const TodoLists = ({
     // Variables from 'mapStateToProps'
-    lists,
-    title,
+    objects,
+    filters,
     count,
     completeCount,
     user,
+    title,
     dispatch
 
 }) => (<div className="popout">
@@ -44,10 +39,10 @@ const TodoLists = ({
     <h4>Total Tasks: {count}</h4>
     <h4>Tasks Complete: {completeCount} </h4>
 
-    <div>{lists.map( list =>
-        <div key={list.id}
+    <div>{filters.map( filter =>
+        <div key={filter.title}
             className="popout">
-            <h3>{list.title}</h3>
+            <h3>{filter.title}</h3>
 
             <table>
             <thead className="todoList">
@@ -59,14 +54,14 @@ const TodoLists = ({
                 </tr>
             </thead>
             <tbody>
-            {list.tasks.map( task =>
-                <tr key={task.id} className={task.complete.toString()}>
-                    <td className="todoSerial">{task.id}</td>
+            {filter.tasks.map( task =>
+                <tr key={objects[task].id} className={objects[task].complete.toString()}>
+                    <td className="todoSerial">{objects[task].index}</td>
                     <td className="todoStatus button no-text-select"
-                    onClick={e => {dispatch(toggleTodo(list.id, task.id))}}>
-                    {statusText(task.complete)}</td>
-                    <td className="todoTitle">{task.title}</td>
-                    <td className="todoDate">{task.dueDate} @ {task.dueTime}</td>
+                    onClick={e => {dispatch(toggleTodo(objects[task].id))}}>
+                    {statusText(objects[task].complete)}</td>
+                    <td className="todoTitle">{objects[task].title}</td>
+                    <td className="todoDate">{objects[task].dueDate} @ {objects[task].dueTime}</td>
                 </tr>
             )}
             </tbody>
@@ -82,11 +77,13 @@ const TodoLists = ({
 //
 const mapStateToProps = (state, props) => {
     return {
-        lists: state.lists,
+        objects: state.objects,
+        filters: state.filters,
+        count: sumTasks(state.objects),
+        completeCount: sumComplete(state.objects),
         title: props.title,
-        count: sumTasks(state.lists),
-        completeCount: sumComplete(state.lists),
-        user: state.users[0]
+        //user: state.users[0].title
+        user: "Mind Forker"
     }
 }
 

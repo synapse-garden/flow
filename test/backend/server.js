@@ -3,7 +3,8 @@
 var express = require('express');
 
 // Import Fake Data
-const initTasks = require('./init/initTasks.js');
+const initFilters = require('./init/initFilters.js');
+const initObjects = require('./init/initObjects.js');
 const initUsers = require('./init/initUsers.js');
 
 
@@ -13,18 +14,27 @@ const initUsers = require('./init/initUsers.js');
 var expressServer = express();
 
 // Express Request Handlers
-    // Lists
-expressServer.get('/lists/:listId', (req, res) => {
-    console.log( "List Request!" );
-    if( req.params.listId == -1 ){
-        res.send( initTasks );
-    }
-    else{ res.send( initTasks[ req.params.listId ] ); }
+    // All
+expressServer.get('/all/', (req, res) => {
+    res.send([
+        initFilters,
+        initObjects,
+        initUsers
+    ]);
+})
+    // Filters
+expressServer.get('/filter/:filterId', (req, res) => {
+    if( req.params.filterId == null ){ res.send( initFilters ); }
+    else{ res.send( initFilters[ req.params.filterId ] ); }
+})
+    // Objects
+expressServer.get('/object/:objectId', (req, res) => {
+    if( req.params.objectId == null ){ res.send( initObjects ); }
+    else{ res.send( initObjects[ req.params.objectId ] ); }
 })
     // Users
 expressServer.get('/users/:userId', (req, res) => {
-    console.log( "User Request!" );
-    if( req.params.userId == -1 ){ res.send( initUsers ); }
+    if( req.params.userId == null ){ res.send( initUsers ); }
     else{ res.send( initUsers[ req.params.userId ] ); }
 })
 

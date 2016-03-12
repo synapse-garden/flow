@@ -1,5 +1,5 @@
 // Create entry reducer function body with initial state and action input
-const users = (state = [], action) => {
+const filters = (state = [], action) => {
     // Switch logic chooses what to execute based on the action type
     switch (action.type){
         case 'A':
@@ -7,8 +7,8 @@ const users = (state = [], action) => {
                 state
             }
 
-        // Sets the new users state to the entirety of the incoming data
-        case 'PUSH_USERS': return(
+        // Sets the new filters state to the entirety of the incoming data
+        case 'PUSH_FILTERS': return(
             action.data
         )
         // In case nothing happens, just return the input (no action)
@@ -17,4 +17,4 @@ const users = (state = [], action) => {
 }
 
 // Set default export value to the entry function
-export default users
+export default filters
